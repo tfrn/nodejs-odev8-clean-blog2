@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 app.set('view engine', 'ejs');
 //middleware
-app.use(express.static('views'));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   res.render("index");
@@ -13,9 +13,10 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render("about");
 });
-app.get('/contact', (req, res) => {
-  res.render("contact");
+app.get('/add_post', (req, res) => {
+  res.render("add_post");
 });
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`Sunucu ${port} portunda başlatıldı.`);
